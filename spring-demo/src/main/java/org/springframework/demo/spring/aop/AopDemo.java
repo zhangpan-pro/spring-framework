@@ -15,6 +15,12 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy
 @ComponentScan("org.springframework.demo.spring.aop")
 public class AopDemo {
-	AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AopDemo.class);
+
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AopDemo.class);
+		AopTargetClass aopTargetClass = (AopTargetClass)applicationContext.getBean("aopTargetClass");
+		aopTargetClass.method();
+		aopTargetClass.methodException();
+	}
 
 }

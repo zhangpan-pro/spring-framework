@@ -984,8 +984,10 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 		if (bpCache == null) {
 			bpCache = new BeanPostProcessorCache();
 			for (BeanPostProcessor bp : this.beanPostProcessors) {
+				// 第一个后置处理器
 				if (bp instanceof InstantiationAwareBeanPostProcessor) {
 					bpCache.instantiationAware.add((InstantiationAwareBeanPostProcessor) bp);
+					// 扩展第一个后置处理器
 					if (bp instanceof SmartInstantiationAwareBeanPostProcessor) {
 						bpCache.smartInstantiationAware.add((SmartInstantiationAwareBeanPostProcessor) bp);
 					}
