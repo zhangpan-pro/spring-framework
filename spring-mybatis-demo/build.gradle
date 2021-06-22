@@ -1,0 +1,23 @@
+plugins {
+    id 'war'
+}
+
+group 'org.springframework'
+version '5.3.8'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(project(":spring-webmvc"))
+    compile(project(":spring-tx"))
+    compile(project(":spring-jdbc"))
+    compile("mysql:mysql-connector-java:8.0.25")
+    compile("com.alibaba:druid:1.1.24")
+    compile("org.mybatis:mybatis:3.5.7")
+    compile("org.mybatis:mybatis-spring:2.0.6")
+    testImplementation 'junit:junit:4.11'
+
+}
